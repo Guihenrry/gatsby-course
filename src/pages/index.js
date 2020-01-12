@@ -1,12 +1,21 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
+
+import PostItem from "../components/PostItem"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Home</h1>
+    <PostItem
+      slug="/about"
+      category="Misc"
+      date="30 de julho de 2019"
+      timeToRead="5"
+      title="Meu primeiro post"
+      description="Então essa é uma das razões para craição deste blog."
+    />
   </Layout>
 )
 
