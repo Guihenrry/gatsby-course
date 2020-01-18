@@ -42,6 +42,22 @@ exports.createPages = ({ graphql, actions }) => {
             }
             timeToRead
           }
+          next {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+          previous {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
         }
       }
     }
@@ -49,7 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = result.data.allMarkdownRemark.edges
 
     // Creates Pages Blog Post
-    posts.forEach(({ node }) => {
+    posts.forEach(({ node, next, previous }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve("src/templates/blog-post.js"),
@@ -57,6 +73,8 @@ exports.createPages = ({ graphql, actions }) => {
           // Data passed to context is avaolable
           // in page queries as GraphQl variables
           slug: node.fields.slug,
+          previusPost: next,
+          nextPost: previous,
         },
       })
     })
