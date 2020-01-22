@@ -2,20 +2,20 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export const PostItemLink = styled(Link)`
-  color: #8899ae;
+  color: var(--texts);
   display: flex;
   text-decoration: none;
   transition: color 0.5s;
 
   &:hover {
-    color: #1fa1f2;
+    color: var(--highlight);
   }
 `
 
 export const PostItemWarapper = styled.section`
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #38444d;
+  border-bottom: 1px solid var(--borders);
   padding: 2rem 3rem;
   width: 100%;
 `
@@ -26,8 +26,8 @@ export const PostItemTag = styled.div`
   justify-content: center;
   min-width: 90px;
   min-height: 90px;
-  background: ${props => (props.background ? props.background : "#1fa1f2")};
-  color: #fff;
+  background: ${props => (props.background ? props.background : "var(--highlight)")};
+  color: var(--white);
   font-size: 1.3rem;
   font-weight: 700;
   border-radius: 50%;

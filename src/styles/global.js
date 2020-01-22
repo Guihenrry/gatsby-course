@@ -49,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
     border-spacing: 0;
   }
   body {
-    background: #16202c;
+    background: var(--background);
     line-height: 1;
     font-size: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
@@ -61,6 +61,28 @@ const GlobalStyles = createGlobalStyle`
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+  body.dark {
+    --borders: #38444d;
+    --texts: #8899a6;
+    --postColor: #fff;
+    --highlight: #1fa1f2;
+    --mediumBackground: #192734;
+    --background: #16202c;
+    --white: #fff;
+    --black: #222;
+  }
+  
+  body {
+    --borders: #dedede;
+    --postColor: #111;
+    --texts: #555555;
+    --highlight: #1fa1f2;
+    --mediumBackground: #f0f0f3;
+    --background: #fff;
+    --white: #fff;
+    --black: #222;
   }
 `
 

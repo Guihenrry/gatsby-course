@@ -10,7 +10,7 @@ import * as S from "../components/Post/styled"
 
 const BlogPost = ({ data, pageContext }) => {
   const post = data.markdownRemark
-  const { previusPost, nextPost, slug } = pageContext
+  const { previusPost, nextPost } = pageContext
 
   return (
     <Layout>
