@@ -29,6 +29,14 @@ export const MenuBarItem = styled.span`
   transition: color 0.5s;
   fill: #333;
 
+  &.light {
+    color: #D4D400;
+
+    &:hover {
+      color: #E2E240;
+    }
+  }
+
   &:hover {
     color: var(--highlight);
   }
