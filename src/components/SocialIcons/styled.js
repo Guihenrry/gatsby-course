@@ -1,8 +1,13 @@
 import styled from "styled-components"
+import media from 'styled-media-query'
 
 export const SocialIconsWrapper = styled.nav`
   width: 100%;
   margin: 2rem auto;
+
+  ${media.lessThan("large")`
+    display: none;
+  `}
 `
 
 export const SocialIconsList = styled.ul`
