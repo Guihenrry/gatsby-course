@@ -7,6 +7,8 @@ import { Grid } from "styled-icons/boxicons-regular/Grid"
 import { ThList as List } from 'styled-icons/typicons/ThList'
 import { UpArrowAlt as Arrow } from "styled-icons/boxicons-regular/UpArrowAlt"
 
+import getThemeColor from '../../utils/getThemeColor'
+
 import * as S from "./styled"
 
 const MenuBar = () => {
@@ -29,21 +31,39 @@ const MenuBar = () => {
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
         <S.MenuBarItem>
-          <S.MenuBarLink to="/" title="Voltar Para Home" activeClassName="active">
+          <S.MenuBarLink
+            cover
+            direction="right"
+            duration={0.6}
+            bg={getThemeColor()}
+
+            to="/"
+            title="Voltar Para Home"
+            activeClassName="active"
+          >
             <Home />
           </S.MenuBarLink>
         </S.MenuBarItem>
-  
+
         <S.MenuBarItem>
-          <S.MenuBarLink to="/search" title="Pesquisar" activeClassName="active">
+          <S.MenuBarLink
+            cover
+            direction="right"
+            duration={0.6}
+            bg={getThemeColor()}
+
+            to="/search"
+            title="Pesquisar"
+            activeClassName="active"
+          >
             <Search />
           </S.MenuBarLink>
         </S.MenuBarItem>
       </S.MenuBarGroup>
-  
+
       <S.MenuBarGroup>
-        <S.MenuBarItem 
-          title="Mudar o Tema" 
+        <S.MenuBarItem
+          title="Mudar o Tema"
           onClick={() => {
             window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
           }}
@@ -51,13 +71,13 @@ const MenuBar = () => {
         >
           <Light />
         </S.MenuBarItem>
-  
+
         <S.MenuBarItem className="change-view" title="Mudar Vizualização" onClick={() => {
           window.__setPreferredDisplay(isListMode ? 'grid' : 'list');
         }}>
-          {isListMode ? <Grid /> : <List />} 
+          {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>
-  
+
         <S.MenuBarItem title="Ir para o topo">
           <Arrow />
         </S.MenuBarItem>

@@ -1,6 +1,7 @@
 import React from "react"
-
 import PropTypes from "prop-types"
+
+import getThemeColor from '../../utils/getThemeColor'
 
 import * as S from "./styled"
 
@@ -13,19 +14,26 @@ const PostItem = ({
   title,
   description,
 }) => (
-  <S.PostItemLink to={slug}>
-    <S.PostItemWarapper>
-      <S.PostItemTag background={background}>{category}</S.PostItemTag>
-      <S.PostItemInfo>
-        <S.PostItemDate>
-          {date} • {timeToRead} min de leitura
+    <S.PostItemLink
+      cover
+      direction="right"
+      duration={0.6}
+      bg={getThemeColor()}
+      to={slug}
+      activeClassName="active"
+    >
+      <S.PostItemWarapper>
+        <S.PostItemTag background={background}>{category}</S.PostItemTag>
+        <S.PostItemInfo>
+          <S.PostItemDate>
+            {date} • {timeToRead} min de leitura
         </S.PostItemDate>
-        <S.PostItemTitle>{title}</S.PostItemTitle>
-        <S.PostItemDescription>{description}</S.PostItemDescription>
-      </S.PostItemInfo>
-    </S.PostItemWarapper>
-  </S.PostItemLink>
-)
+          <S.PostItemTitle>{title}</S.PostItemTitle>
+          <S.PostItemDescription>{description}</S.PostItemDescription>
+        </S.PostItemInfo>
+      </S.PostItemWarapper>
+    </S.PostItemLink>
+  )
 
 PostItem.prototype = {
   slug: PropTypes.string.isRequired,
