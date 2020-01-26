@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import media from 'styled-media-query'
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import media from "styled-media-query"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const MenuBarWrapper = styled.aside`
   display: flex;
@@ -14,9 +14,9 @@ export const MenuBarWrapper = styled.aside`
   background: var(--mediumBackground);
   border-left: 1px solid var(--borders);
 
-
-  ${media.lessThan('large')`
+  ${media.lessThan("large")`
     width: 100%;
+    min-width: 320px;
     flex-direction: row;
     height: auto;
     bottom: 0;
@@ -28,7 +28,7 @@ export const MenuBarGroup = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${media.lessThan('large')`
+  ${media.lessThan("large")`
     flex-direction: row;
   `}
 `
@@ -44,10 +44,10 @@ export const MenuBarItem = styled.span`
   fill: #333;
 
   &.light {
-    color: #D4D400;
+    color: #d4d400;
 
     &:hover {
-      color: #E2E240;
+      color: #e2e240;
     }
   }
 
@@ -59,7 +59,7 @@ export const MenuBarItem = styled.span`
     color: var(--highlight);
   }
 
-  ${media.lessThan('large')`
+  ${media.lessThan("large")`
     &.change-view {
       display: none;
     }
